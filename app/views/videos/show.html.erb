@@ -12,14 +12,37 @@
         <p>
           <%= raw yt_client.my_video(@video.yt_video_id).embed_html %>
         </p>
-        <p>description: <%= @video.description %></p>
-        <p>url: <a href="http://www.youtube.com/watch?v=<%= @video.yt_video_id %>&feature=youtube_it">http://www.youtube.com/watch?v=<%= @video.yt_video_id %></a></p>
+        <h3><%= @video.description %></h3>
+        <p><b>url:</b> <a href="http://www.youtube.com/watch?v=<%= @video.yt_video_id %>&feature=youtube_it" target="_blank">http://www.youtube.com/watch?v=<%= @video.yt_video_id %></a></p>
+
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_video_path(@video), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), video_path(@video), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
       </div>      
     </div>
   </div>
+  <h2>Comments:</h2>
+  <div class="inner">
+    <ul class="list">        
+      <% @video.comments.each do |c| %>
+        <li>
+          <div class="item" style="margin-left: 2px !important;">
+            <p><%= c.comment %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+    <br/><br/>
+  <%= form_for @video, :url => add_comment_video_path(@video), :html => { :class => :form } do |f| -%>
+  <div class="group">
+    <%= f.label :comment, "Add your comment", :class => :label %>
+    <%= f.text_area :comment, :class => 'text_area', :rows => 10 %>
+  </div>
+  <%= f.submit "add comment"%>
+  <% end -%>
+
+
 </div>
 
 <% content_for :sidebar, render(:partial => 'sidebar') -%>

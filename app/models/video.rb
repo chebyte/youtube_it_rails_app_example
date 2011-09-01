@@ -1,7 +1,21 @@
 class Video < ActiveRecord::Base
+  acts_as_commentable
+  
+  attr_accessor :comment
+  
   scope :completes,   where(:is_complete => true)
   scope :incompletes, where(:is_complete => false)
   
+  def create_comment(comment)
+    begin
+      comments.create(:comment => comment)
+      Video.yt_session.add_comment(yt_video_id, comment)
+    rescue
+      false
+    end
+  end
+  
+    
   def self.yt_session
     @yt_session ||= YouTubeIt::Client.new(:username => YouTubeITConfig.username , :password => YouTubeITConfig.password , :dev_key => YouTubeITConfig.dev_key)    
   end

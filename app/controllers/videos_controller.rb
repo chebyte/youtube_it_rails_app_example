@@ -48,6 +48,16 @@ class VideosController < InheritedResources::Base
     redirect_to videos_path
   end
 
+  def add_comment
+    @video = Video.find(params[:id])
+    if @video.create_comment(params[:video][:comment])
+      flash[:notice] = "Comment has been sucessfully added."
+    else
+      flash[:error] = "Sorry the comment has not been added."
+    end
+    redirect_to @video    
+  end
+
   protected
     def collection
       @videos ||= end_of_association_chain.completes
