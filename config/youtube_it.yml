@@ -1,7 +1,7 @@
 common: &common
-  dev_key: AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
-  username:  thewowarthas@gmail.com
-  password:  games1000
+  dev_key: your dev key
+  username:  your username
+  password:  your passwd
   
 test:
   <<: *common
