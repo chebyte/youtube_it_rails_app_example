@@ -1,19 +1,11 @@
 common: &common
   dev_key: AI39si7WuZZxAkYebKSyrlJR7hIFktt6OoPycEOeOT_yHkZgr6QsGbZgmhKvbS4bsSAv0utgrfhNfXQBITu1wX_z3VsZE02giQ
-  client_id: youtube_it
-  dev_tag:   youtube_it
   username:  thewowarthas@gmail.com
   password:  games1000
   
 test:
-  consumer_key: "test"
-  consumer_secret: test
   <<: *common
 development:
-  consumer_key: "dev"
-  consumer_secret: dev
   <<: *common
 production:
-  consumer_key: "prod"
-  consumer_secret: prod
   <<: *common
