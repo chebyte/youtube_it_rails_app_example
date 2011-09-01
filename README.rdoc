@@ -4,23 +4,23 @@ This app demonstrates how to configure a Rails 3 application with youtube_it gem
 
 == Getting Started
 
-1. Get this app:
+Get this app:
   git clone git://github.com/chebyte/youtube_it_rails_app_example.git
 
-2. Configure the file config/youtube_it.yml with your data account:
+Configure the file config/youtube_it.yml with your data account:
       username:  your user
       password:  your pass
       dev_key:   your dev key
       
 Note: you can get your developer key from here http://code.google.com/apis/youtube/dashboard.
 
-3. Run bundle
+Run bundle
   bundle install
 
-4. Run migrations
+Run migrations
     rake db:migrate
 
-5. Go to http://localhost:3000/ and enjoy it:
+Go to http://localhost:3000/ and enjoy it:
 
 == DEMO
 
@@ -28,7 +28,7 @@ Note: you can get your developer key from here http://code.google.com/apis/youtu
   
 == CONTRIBUTORS:
 
-* Kyle J. Ginavan - http://github.com/kylejginavan/
+* Kyle J. Ginavan - http://github.com/kylejginavan
 * Mauro Torres - http://github.com/chebyte
 
 == LICENSE:
