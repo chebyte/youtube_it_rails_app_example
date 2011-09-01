@@ -24,7 +24,7 @@ Go to http://localhost:3000/ and enjoy it:
 
 == DEMO
 
-  You can test this example online here: http://youtube-it.heroku.com/
+You can test this example online here: http://youtube-it.heroku.com/
   
 == CONTRIBUTORS:
 
