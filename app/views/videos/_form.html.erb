@@ -1,0 +1,27 @@
+
+  <div class="group">
+    <%= f.label :title, t("activerecord.attributes.video.title", :default => "Title"), :class => :label %>
+    <%= f.text_field :title, :class => 'text_field' %>
+    <span class="description">Ex: add title video</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :description, t("activerecord.attributes.video.description", :default => "Description"), :class => :label %>
+    <%= f.text_field :description, :class => 'text_field' %>
+    <span class="description">Ex: add description video</span>
+  </div>
+
+<div class="group navform wat-cf">
+<% if @video.new_record?%>
+  <button class="button" type="submit">
+    <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Step 2") %>
+  </button>
+<%else%>
+  <button class="button" type="submit">
+    <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
+  </button>
+<%end%>
+
+  <span class="text_button_padding"><%= t("web-app-theme.or", :default => "or") %></span>
+	<%= link_to t("web-app-theme.cancel", :default => "Cancel"), videos_path, :class => "text_button_padding link_button" %>
+</div>

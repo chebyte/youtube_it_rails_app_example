@@ -1,0 +1,25 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", videos_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_video_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", video_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <%= raw yt_client.my_video(@video.yt_video_id).embed_html %>
+        </p>
+        <p>description: <%= @video.description %></p>
+        <p>url: <a href="http://www.youtube.com/watch?v=<%= @video.yt_video_id %>&feature=youtube_it">http://www.youtube.com/watch?v=<%= @video.yt_video_id %></a></p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_video_path(@video), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), video_path(@video), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
