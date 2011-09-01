@@ -20,11 +20,11 @@ Run bundle
 Run migrations
     rake db:migrate
 
-Go to http://localhost:3000/ and enjoy it:
+Go to http://localhost:3000 and enjoy it:
 
 == DEMO
 
-You can test this example online here: http://youtube-it.heroku.com/
+You can test this example online here: http://youtube-it.heroku.com
   
 == CONTRIBUTORS:
 
