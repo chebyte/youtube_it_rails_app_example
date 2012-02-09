@@ -1,3 +1,13 @@
+== DONATION
+
+  YOUTUBE_IT is developed by many contributors who are passioned about opensource projects 
+  and selflessly donate their time and work. Following that spirit your donations to this project 
+  will be destined to the Tuquito Libre Foundation(http://fundacion.tuquito.org.ar) for developing 
+  technology projects intended to close the digital gap in Latin America.
+
+{<img src=https://www.pledgie.com/campaigns/16746.png?skin_name=chrome>}[http://www.pledgie.com/campaigns/16746]
+
+
 == YouTube IT example rails app
 
 This app demonstrates how to configure a Rails 3 application with youtube_it gem, how to upload videos to youtube from web and how to manage videos(crud).
